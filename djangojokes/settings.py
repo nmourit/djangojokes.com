@@ -43,10 +43,10 @@ INSTALLED_APPS = [
 
     # Third-party
     'crispy_forms',
+    'crispy_bootstrap5',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'crispy_bootstrap5',
 
     # Local apps
     'common.apps.CommonConfig',
@@ -59,6 +59,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 MIDDLEWARE = [
@@ -153,7 +154,7 @@ ACCOUNT_EMAIL_REQUIRED = True # Default: False
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory' # Default: 'optional'
 ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5 # Default: 5
 ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300 # Default 300
-ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login' # Default: '/'
+ACCOUNT_LOGOUT_REDIRECT_URL ='account_login' # Default: '/'
 ACCOUNT_USERNAME_REQUIRED = False # Default: True
 
 # Internationalization
