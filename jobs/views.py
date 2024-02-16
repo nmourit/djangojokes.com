@@ -1,16 +1,23 @@
+import html
 from django.urls import reverse_lazy
-from django.views.generic import FormView, TemplateView
+from django.views.generic import CreateView, TemplateView
 
+# Had to comment out below because could not create sendgrid
+#   account for exercises therefore could not create sendgrid module
+
+# from common.utils.email import send_email
+
+from .models import Applicant
 from .forms import JobApplicationForm
 
-class JobAppView(FormView):
-    template_name = 'jobs/joke_writer.html'
+class JobAppView(CreateView):
+    model = Applicant
     form_class = JobApplicationForm
     success_url = reverse_lazy('jobs:thanks')
 
     def form_valid(self, form):
         data = form.cleaned_data
-        to = 'nvang_1@hotmail.com'
+        to = 'you@example.com'
         subject = 'Application for Joke Writer'
         content = f'''<p>Hey HR Manager!</p>
             <p>Job application received:</p>
