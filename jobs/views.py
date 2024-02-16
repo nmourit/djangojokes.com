@@ -2,10 +2,7 @@ import html
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, TemplateView
 
-# Had to comment out below because could not create sendgrid
-#   account for exercises therefore could not create sendgrid module
-
-# from common.utils.email import send_email
+from common.utils.email import send_email
 
 from .models import Applicant
 from .forms import JobApplicationForm
