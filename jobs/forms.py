@@ -7,7 +7,6 @@ from .models import Applicant
 def validate_checked(value):
     if not value:
         raise ValidationError("Required.")
-    
 
 class JobApplicationForm(forms.ModelForm):
 
@@ -18,18 +17,18 @@ class JobApplicationForm(forms.ModelForm):
         (4, 'THU'),
         (5, 'FRI')
     )
-    
+
     available_days = forms.TypedMultipleChoiceField(
         choices=DAYS,
         coerce=int,
-        help_text='Check all days that you can work.',
-        widget=forms.CheckboxSelectMultiple(
-            attrs={'checked':True}
+        help_text = 'Check all days that you can work.',
+        widget = forms.CheckboxSelectMultiple(
+            attrs = {'checked':True}
         )
     )
 
     confirmation = forms.BooleanField(
-        label='I certify that the information I have provided is true.',
+        label = 'I certify that the information I have provided is true.',
         validators=[validate_checked]
     )
 
@@ -46,7 +45,7 @@ class JobApplicationForm(forms.ModelForm):
             ),
             'start_date': forms.SelectDateWidget(
                 attrs = {
-                    'style': 'width: 21%; display: inline-block; margin: 0 1%'
+                    'style': 'width: 31%; display: inline-block; margin: 0 1%'
                 },
                 years = range(datetime.now().year, datetime.now().year+2)
             ),
