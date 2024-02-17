@@ -8,7 +8,8 @@ class Joke(models.Model):
     question = models.TextField(max_length=200)
     answer = models.TextField(max_length=100, blank=True)
     user = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.PROTECT
+        settings.AUTH_USER_MODEL, on_delete=models.PROTECT,
+        related_name='jokes'
     )
     category = models.ForeignKey(
         'Category', on_delete=models.PROTECT, related_name='jokes'
